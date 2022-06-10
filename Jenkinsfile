@@ -6,7 +6,7 @@ pipeline {
 kind: Pod
 metadata:
   name: kaniko
-  namespace: dev-ext
+  namespace: default
 spec:
   containers:
   - name: shell
