@@ -12,8 +12,6 @@ spec:
   - name: shell
     image: gcr.io/kaniko-project/executor
     imagePullPolicy: IfNotPresent
-    command:
-    - /busybox/cat
     tty: true
     volumeMounts:
       - name: docker-config
