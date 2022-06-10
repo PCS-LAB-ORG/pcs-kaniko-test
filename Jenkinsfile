@@ -10,8 +10,10 @@ metadata:
 spec:
   containers:
   - name: shell
-    image: gcr.io/kaniko-project/executor
+    image: gcr.io/kaniko-project/executor:debug
     imagePullPolicy: IfNotPresent
+     command:
+     - /busybox/cat
     tty: true
     volumeMounts:
       - name: docker-config
