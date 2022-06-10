@@ -12,7 +12,7 @@ spec:
   - name: shell
     image: gcr.io/kaniko-project/executor:debug
     imagePullPolicy: IfNotPresent
-     command:
+    command:
      - /busybox/cat
     tty: true
     volumeMounts:
