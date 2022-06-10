@@ -10,7 +10,7 @@ metadata:
 spec:
   containers:
   - name: shell
-    image: gcr.io/kaniko-project/executor:debug
+    image: gcr.io/kaniko-project/executor
     imagePullPolicy: IfNotPresent
     command:
     - /busybox/cat
