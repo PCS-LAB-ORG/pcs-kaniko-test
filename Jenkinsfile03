@@ -1,11 +1,7 @@
 // Uses Declarative syntax to run commands inside a container.
 pipeline {
-    agent {
-        kubernetes {
-            label jenkins-kaniko-agent
-            defaultContainer 'kaniko'
-        }
-    }
+    podTemplate {
+    node(jenkins-kaniko-agent) {
     stages {
        stage('Build') {
            steps {
@@ -16,3 +12,5 @@ pipeline {
         }
 }
 }
+}
+
