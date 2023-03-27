@@ -1,8 +1,5 @@
-// Uses Declarative syntax to run commands inside a container.
-pipeline {
-    podTemplate {
+podTemplate {
     node(jenkins-kaniko-agent) {
-    stages {
        stage('Build') {
            steps {
              container('kaniko'){
@@ -10,7 +7,7 @@ pipeline {
           }	   
         }
         }
+    }
 }
-}
-}
+
 
