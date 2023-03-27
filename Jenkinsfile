@@ -31,13 +31,19 @@ spec:
     }
 environment {
 		DOCKERHUB_CREDENTIALS=credentials('docker-bgpanw')
-            }           
+            }
+
     stages {
+	stage('Login') {
+           steps {
+		sh 'echo $DOCKERHUB_CREDENTIALS | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+		  }
+		}
        stage('Build') {
            steps {
              container('shell'){
                sh "/kaniko/executor --dockerfile \"`pwd`/Dockerfile\" --context \"`pwd`\" --destination=docker.io/bgpanw/kanikotest:1.0"
-          }
+          }	   
         }
         }
 }
