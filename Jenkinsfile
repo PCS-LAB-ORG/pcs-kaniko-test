@@ -23,8 +23,8 @@ spec:
         mountPath: /kaniko/.docker
   volumes:
     - name: docker-config
-      secret:
-        name: regcred
+      configMap:
+        name: docker-config
 '''
             defaultContainer 'shell'
         }
