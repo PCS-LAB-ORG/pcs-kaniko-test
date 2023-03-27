@@ -34,11 +34,6 @@ environment {
             }
 
     stages {
-	stage('Login') {
-           steps {
-		sh 'echo $DOCKERHUB_CREDENTIALS | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-		  }
-		}
        stage('Build') {
            steps {
              container('shell'){
