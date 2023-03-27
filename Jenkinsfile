@@ -29,10 +29,6 @@ spec:
             defaultContainer 'shell'
         }
     }
-environment {
-		DOCKERHUB_CREDENTIALS=credentials('docker-bgpanw')
-            }
-
     stages {
        stage('Build') {
            steps {
