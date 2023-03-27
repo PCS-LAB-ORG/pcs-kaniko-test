@@ -33,7 +33,7 @@ spec:
        stage('Build') {
            steps {
              container('shell'){
-               sh "/kaniko/executor --dockerfile \"`pwd`/Dockerfile\" --context \"`pwd`\" --destination=${env.ECR_REPO}:${env.BUILD_ID}"
+               sh "/kaniko/executor --dockerfile \"`pwd`/Dockerfile\" --context \"`pwd`\" --destination=docker.io/bgpanw/kanikotest:1.0"
           }
         }
         }
