@@ -1,6 +1,6 @@
 // Uses Declarative syntax to run commands inside a container.
 pipeline {
-
+    agent none
     stages {
        stage('Build') {
           agent {label "jenkins-kaniko-agent"}
