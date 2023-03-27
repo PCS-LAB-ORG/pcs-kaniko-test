@@ -1,8 +1,9 @@
 // Uses Declarative syntax to run commands inside a container.
 pipeline {
-    agent {label "jenkins-kaniko-agent"}
+
     stages {
        stage('Build') {
+          agent {label "jenkins-kaniko-agent"}
            steps {
              container('kaniko'){
                sh "/kaniko/executor --dockerfile \"`pwd`/Dockerfile\" --context \"`pwd`\" --destination=docker.io/bgpanw/kanikotest:1.0"
